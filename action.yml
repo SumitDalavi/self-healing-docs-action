@@ -1,0 +1,21 @@
+name: 'Self-Healing Technical Documentation'
+description: 'Detects stale documentation when code changes and auto-generates PRs with corrections.'
+inputs:
+  openai_api_key:
+    description: 'OpenAI API Key for LLM evaluation'
+    required: true
+  docs_dir:
+    description: 'Directory containing markdown documentation'
+    required: false
+    default: 'docs'
+  src_dir:
+    description: 'Directory containing source code'
+    required: false
+    default: 'src'
+  auto_merge:
+    description: 'Whether to auto-merge high confidence fixes'
+    required: false
+    default: 'false'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
