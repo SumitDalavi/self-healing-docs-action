@@ -1,6 +1,7 @@
 # Self-Healing Technical Documentation Action
 
-> **A GitHub Action that monitors a codebase, detects when code changes make documentation inaccurate, identifies the specific stale sections, and automatically generates a PR with corrected docs or flags the discrepancies for human review.**
+> **Maturity:** Partial Prototype
+> _A GitHub Action that monitors a codebase, detects when code changes make documentation inaccurate, identifies the specific stale sections, and automatically generates a PR with corrected docs or flags the discrepancies for human review._
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-20-green?logo=nodedotjs)](https://nodejs.org/)
@@ -51,6 +52,21 @@ jobs:
 2. It uses embeddings to map the modified functions to relevant sections in your `/docs` folder.
 3. The LLM judges if the doc is now stale given the specific diff.
 4. If stale, it calculates the correct text and posts a PR comment with a diff highlighting what needs to be changed.
+
+## Mock Boundaries (Honest Scope)
+
+| What | Status | Details |
+|---|---|---|
+| Embeddings Graph | **Real** | Semantic mapping between code and docs works. |
+| LLM Judge | **Real/Mocked** | Can use real OpenAI API or mock stub for CI. |
+| GitHub API | **Real** | Uses `@actions/github` to post real PR comments. |
+
+## 📚 Documentation
+
+- [Architecture](docs/ARCHITECTURE.md) — System diagram and component details
+- [Runbook](docs/runbook.md) — Setup, commands, and expected outputs
+- [Decisions](docs/decisions.md) — ADRs for LLM as a Judge
+- [Changelog](docs/changelog.md) — Change history
 
 ## 👨‍💻 Author
 
