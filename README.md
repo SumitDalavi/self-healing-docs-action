@@ -1,6 +1,9 @@
+> **NOTE:** This repository is an archival lab or partial prototype. It is not actively maintained and should not be used as a reference for production-grade deployments or performance benchmarks.
+
+
 # Self-Healing Technical Documentation Action
 
-> **Maturity:** Partial Prototype
+> **Maturity:** Functional Prototype
 > _A GitHub Action that monitors a codebase, detects when code changes make documentation inaccurate, identifies the specific stale sections, and automatically generates a PR with corrected docs or flags the discrepancies for human review._
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue?logo=typescript)](https://www.typescriptlang.org/)
