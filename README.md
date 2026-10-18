@@ -6,6 +6,9 @@
 > **Maturity:** Functional Prototype
 > _A GitHub Action that monitors a codebase, detects when code changes make documentation inaccurate, identifies the specific stale sections, and automatically generates a PR with corrected docs or flags the discrepancies for human review._
 
+[![CI Pipeline](https://github.com/SumitDalavi/self-healing-docs-action/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/SumitDalavi/self-healing-docs-action/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/SumitDalavi/self-healing-docs-action)](https://github.com/SumitDalavi/self-healing-docs-action/releases)
+[![Release Workflow](https://github.com/SumitDalavi/self-healing-docs-action/actions/workflows/release.yml/badge.svg)](https://github.com/SumitDalavi/self-healing-docs-action/actions/workflows/release.yml)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-20-green?logo=nodedotjs)](https://nodejs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
@@ -63,6 +66,17 @@ jobs:
 | Embeddings Graph | **Real** | Semantic mapping between code and docs works. |
 | LLM Judge | **Real/Mocked** | Can use real OpenAI API or mock stub for CI. |
 | GitHub API | **Real** | Uses `@actions/github` to post real PR comments. |
+
+## 🔒 Release & Security Verification
+
+Every tagged release (*.*.*) triggers an automated DevSecOps release workflow:
+1. **Automated Testing:** Runs 
+pm test and TypeScript typechecking (	sc --noEmit).
+2. **Action Packaging:** Bundles the production runner using @vercel/ncc into ction-dist.tar.gz.
+3. **Container Image Build:** Builds the fallback action container image (ghcr.io/sumitdalavi/self-healing-docs-action:<tag>).
+4. **Vulnerability Scanning:** Scans the container image using [Aqua Security Trivy](https://github.com/aquasecurity/trivy-action) for HIGH and CRITICAL CVEs.
+5. **SBOM Generation:** Generates a Software Bill of Materials (SBOM) in SPDX JSON format (sbom.spdx.json) using [Anchore Syft](https://github.com/anchore/sbom-action).
+6. **GitHub Release Publishing:** Packages release notes and attaches ction-dist.tar.gz and sbom.spdx.json as release assets.
 
 ## 📚 Documentation
 
