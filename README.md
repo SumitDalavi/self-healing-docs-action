@@ -1,5 +1,3 @@
-> **NOTE:** This repository is an archival lab or partial prototype. It is not actively maintained and should not be used as a reference for production-grade deployments or performance benchmarks.
-
 # Self-Healing Technical Documentation Action
 
 [![CI Pipeline](https://github.com/SumitDalavi/self-healing-docs-action/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/SumitDalavi/self-healing-docs-action/actions/workflows/ci.yml)
@@ -112,19 +110,7 @@ Enterprise deployment with production-grade backends, security scans, and contai
 - **Production Orchestration:** Mount secrets via Kubernetes Secrets or cloud secret managers with atomic config reload support.
 - **Release Verification:** Checksums and SPDX SBOM available on [GitHub Releases](https://github.com/SumitDalavi/self-healing-docs-action/releases).
 
-## 📚 Documentation
-
-- [Architecture](docs/ARCHITECTURE.md) — System diagram and component details
-- [Runbook](docs/runbook.md) — Setup, commands, and expected outputs
-- [Decisions](docs/decisions.md) — ADRs for LLM as a Judge
-- [Changelog](docs/changelog.md) — Change history
-
-## 👨‍💻 Author
-
-**Sumit Dalavi** — Senior DevSecOps / Platform Engineer  
-[GitHub](https://github.com/SumitDalavi) · [LinkedIn](https://in.linkedin.com/in/sumit-dalavi-762838129)
-
-## Release & Security Verification
+## 🔒 Release & Security Verification
 
 Every tagged release (`v*.*.*`) triggers an automated DevSecOps release workflow:
 1. **Automated Testing:** Runs test suite gates before build.
@@ -136,16 +122,25 @@ Every tagged release (`v*.*.*`) triggers an automated DevSecOps release workflow
 ### Verifying Releases via GitHub CLI
 ```bash
 # View release details
-gh release view v0.1.0 --repo SumitDalavi/self-healing-docs-action
+gh release view v0.2.0 --repo SumitDalavi/self-healing-docs-action
 
 # Download and verify SBOM
-gh release download v0.1.0 --repo SumitDalavi/self-healing-docs-action --pattern "sbom.spdx.json"
+gh release download v0.2.0 --repo SumitDalavi/self-healing-docs-action --pattern "sbom.spdx.json"
 cat sbom.spdx.json | jq .
 ```
 
-## Documentation
+## 📚 Documentation
 
-- [Architecture](docs/ARCHITECTURE.md)
-- [Runbook](docs/runbook.md)
-- [Decisions](docs/decisions.md)
-- [Changelog](docs/changelog.md)
+- [Architecture](docs/ARCHITECTURE.md) — System diagram and component details
+- [Runbook](docs/runbook.md) — Setup, commands, and expected outputs
+- [Decisions](docs/decisions.md) — ADRs for LLM as a Judge
+- [Changelog](docs/changelog.md) — Change history
+
+## 👨‍💻 Author
+
+**Sumit Dalavi** — Senior DevSecOps / Platform Engineer  
+[GitHub](https://github.com/SumitDalavi) | [LinkedIn](https://in.linkedin.com/in/sumit-dalavi-762838129)
+
+---
+*Built with a focus on robust patterns, not toy demos.*
+
