@@ -1,8 +1,17 @@
 {
-  "name": "self-healing-docs-action",
+  "name": "@sumitdalavi/self-healing-docs-action",
   "version": "0.2.0",
-  "main": "src/index.ts",
+  "description": "GitHub Action that detects stale technical documentation when code changes and auto-generates PRs with corrections.",
+  "main": "dist/index.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SumitDalavi/self-healing-docs-action.git"
+  },
   "scripts": {
+    "build": "ncc build src/index.ts -o dist --source-map --license licenses.txt",
     "start": "ts-node src/index.ts",
     "test": "jest"
   },
