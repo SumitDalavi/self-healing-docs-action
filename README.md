@@ -1,17 +1,18 @@
 > **NOTE:** This repository is an archival lab or partial prototype. It is not actively maintained and should not be used as a reference for production-grade deployments or performance benchmarks.
 
-
 # Self-Healing Technical Documentation Action
+
+[![CI Pipeline](https://github.com/SumitDalavi/self-healing-docs-action/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/SumitDalavi/self-healing-docs-action/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/SumitDalavi/self-healing-docs-action?color=0969da&label=release&logo=github)](https://github.com/SumitDalavi/self-healing-docs-action/releases)
+[![Release Workflow](https://github.com/SumitDalavi/self-healing-docs-action/actions/workflows/release.yml/badge.svg)](https://github.com/SumitDalavi/self-healing-docs-action/actions/workflows/release.yml)
+[![GHCR Container](https://img.shields.io/badge/ghcr.io-v0.2.0-blue?logo=docker&logoColor=white)](https://github.com/SumitDalavi/self-healing-docs-action/pkgs/container/self-healing-docs-action)
+[![npm package](https://img.shields.io/badge/npm-%40sumitdalavi-cb3837?logo=npm&logoColor=white)](https://github.com/SumitDalavi/self-healing-docs-action/packages)
+[![Node.js](https://img.shields.io/badge/Node.js-20+-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org)
+[![SBOM](https://img.shields.io/badge/SBOM-SPDX%202.3-blueviolet?logo=spdx)](https://github.com/SumitDalavi/self-healing-docs-action/releases/tag/v0.2.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 > **Maturity:** Functional Prototype
 > _A GitHub Action that monitors a codebase, detects when code changes make documentation inaccurate, identifies the specific stale sections, and automatically generates a PR with corrected docs or flags the discrepancies for human review._
-
-[![CI Pipeline](https://github.com/SumitDalavi/self-healing-docs-action/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/SumitDalavi/self-healing-docs-action/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/github/v/release/SumitDalavi/self-healing-docs-action)](https://github.com/SumitDalavi/self-healing-docs-action/releases)
-[![Release Workflow](https://github.com/SumitDalavi/self-healing-docs-action/actions/workflows/release.yml/badge.svg)](https://github.com/SumitDalavi/self-healing-docs-action/actions/workflows/release.yml)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue?logo=typescript)](https://www.typescriptlang.org/)
-[![Node.js](https://img.shields.io/badge/Node.js-20-green?logo=nodedotjs)](https://nodejs.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 ---
 
@@ -36,7 +37,6 @@ This project lives inside a CI/CD pipeline and acts as a vigilant technical writ
 npm config set @sumitdalavi:registry https://npm.pkg.github.com
 npm install @sumitdalavi/self-healing-docs-action
 ```
-
 
 ### 1. Add to your Workflow
 Create a `.github/workflows/docs-health.yml` file in your repository:
@@ -77,7 +77,8 @@ jobs:
 
 ## 🔒 Release & Security Verification
 
-Every tagged release (*.*.*) triggers an automated DevSecOps release workflow:
+Every tagged release (
+*.*.*) triggers an automated DevSecOps release workflow:
 1. **Automated Testing:** Runs 
 pm test and TypeScript typechecking (	sc --noEmit).
 2. **Action Packaging:** Bundles the production runner using @vercel/ncc into ction-dist.tar.gz.
