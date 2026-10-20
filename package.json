@@ -1,6 +1,6 @@
 {
   "name": "self-healing-docs-action",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "main": "src/index.ts",
   "scripts": {
     "start": "ts-node src/index.ts",
