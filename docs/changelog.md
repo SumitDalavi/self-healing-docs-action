@@ -7,6 +7,7 @@
 - **Health Reporting:** Exposed `/health` or `/healthz` endpoint with PCL status detection (`mock` vs `live`).
 - **Dynamic Reloading:** Support for atomic ConfigMap / secret reloads without requiring pod restarts.
 - **Supply Chain Security:** Trivy vulnerability scan gates and SPDX JSON SBOM (`sbom.spdx.json`) generation for all releases.
+- **Marketplace & NPM Package Distribution:** Added GitHub Actions Marketplace metadata branding (icon: 'file-text', color: 'blue') and scoped package publishing to GitHub Packages npm Registry (`@sumitdalavi/self-healing-docs-action`).
 
 ## [0.1.0] - 2026-10-18
 ### Added

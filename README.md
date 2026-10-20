@@ -30,6 +30,14 @@ This project lives inside a CI/CD pipeline and acts as a vigilant technical writ
 
 ## 🚀 Quick Start
 
+### NPM Package Installation
+```bash
+# Configure npm for GitHub Packages
+npm config set @sumitdalavi:registry https://npm.pkg.github.com
+npm install @sumitdalavi/self-healing-docs-action
+```
+
+
 ### 1. Add to your Workflow
 Create a `.github/workflows/docs-health.yml` file in your repository:
 
@@ -47,7 +55,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run Self Healing Docs
-        uses: SumitDalavi/self-healing-docs-action@main
+        uses: SumitDalavi/self-healing-docs-action@v0.2.0
         with:
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
           auto_merge: 'false'
